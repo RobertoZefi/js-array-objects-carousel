@@ -58,16 +58,28 @@ console.log('daje')
 const slideElement = document.getElementsByClassName('slide')
 console.log(slideElement)
 
-const arrowLeft = document.querySelector('.arrow__left')
-console.log(arrowLeft)
-const arrowRight = document.querySelector('.arrow__right')
-console.log(arrowRight)
+const before = document.getElementById('before')
+console.log(before)
+const play = document.getElementById('play')
+console.log(play)
+const next = document.getElementById('next')
+console.log(next)
+const pause = document.getElementById('pause')
 
 
 
-arrowRight.addEventListener('click', function() {
-    console.log('Hai schiacciato', arrowRight, slideElement.length)
+next.addEventListener('click', function(){
+    setInterval(autoPlayAvanti, 3000)
+})
 
+before.addEventListener('click', function() {
+    setInterval(autoPlayIndietro, 3000)
+})
+
+
+function autoPlayAvanti(){
+
+    
     let slideCorrente = slideElement[slideCounter]
     slideCorrente.classList.remove('active')
 
@@ -83,11 +95,10 @@ arrowRight.addEventListener('click', function() {
     slideSuccessiva.classList.add('active')
     
     console.log(slideCounter)
-})
+    
+}
 
-
-arrowLeft.addEventListener('click', function() {
-    console.log(arrowLeft)
+function autoPlayIndietro(){
 
     let slideCorrente = slideElement[slideCounter]
     slideCorrente.classList.remove('active')
@@ -104,6 +115,10 @@ arrowLeft.addEventListener('click', function() {
     slideSuccessiva.classList.add('active')
     
     console.log(slideCounter)
-})
+}
+
+function stopAutoPlay(){
+    clearInterval
+}
 
 
