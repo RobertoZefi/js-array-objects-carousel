@@ -31,8 +31,8 @@ for(let i = 0; i < images.length; i++){
     let slideCorrente = images[i]
     console.log(slideCorrente)
     
-    let img = slideCorrente.image
-    console.log (img)
+    let {image, title, text} = slideCorrente
+    console.log (image, title, text)
         
     let className = 'slide'
     if (slideCounter === i){
@@ -40,7 +40,11 @@ for(let i = 0; i < images.length; i++){
     }
     const slide = `
         <div class="${className}">
-            <img src="${img}" alt="">
+            <img src="${image}" alt="">
+            <div class="slide-text">
+                <h3 class="slide__title">${title}</h3>
+                <p class="slide__description">${text}</p> 
+            </div>
         </div>
     `
     carosello.innerHTML += slide
