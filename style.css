@@ -1,0 +1,33 @@
+.slide img{
+    width: 100%;
+	aspect-ratio: 16/9;
+	object-fit: cover;
+	object-position: center;
+}
+
+.slide.active{
+    display: block;
+}
+
+.slide{
+    display: none;
+}
+
+.carosello{
+    position: relative;
+}
+
+.arrow{
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    transform: translateY(-50%);
+}
+
+.arrow__left{
+    left: 20px;
+}
+.arrow__right{
+    right: 20px;
+}
